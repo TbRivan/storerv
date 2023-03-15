@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-interface StepItemProps {
-  card: number;
+export interface StepItemProps {
+  card: 0 | 1 | 2;
 }
 
 export default function StepItem(props: StepItemProps) {
