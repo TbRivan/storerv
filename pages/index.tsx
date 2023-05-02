@@ -7,6 +7,7 @@ import FeaturedGame from "@/components/organism/FeaturedGame";
 import Reached from "@/components/organism/Reached";
 import Story from "@/components/organism/Story";
 import Footer from "@/components/organism/Footer";
+import Head from "next/head";
 
 export default function Home() {
   useEffect(() => {
@@ -15,6 +16,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Store RV</title>
+      </Head>
       <Navbar />
       <MainBanner />
       <TransactionStep />

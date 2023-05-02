@@ -1,9 +1,12 @@
 export interface InputProps {
   label: string;
+  value: string;
+  disabled?: boolean;
+  onChange?: (event: any) => void;
 }
 
 export default function Input(props: InputProps) {
-  const { label, ...nativeProps } = props;
+  const { label, value, disabled, onChange } = props;
   return (
     <>
       <label
@@ -19,7 +22,9 @@ export default function Input(props: InputProps) {
         name="name"
         aria-describedby="name"
         placeholder="Enter your name"
-        {...nativeProps}
+        value={value}
+        onChange={onChange}
+        disabled={disabled}
       />
     </>
   );

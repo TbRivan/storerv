@@ -5,7 +5,7 @@ export default function Ilustration() {
     let stars = [];
     for (let i = 0; i < 5; i++) {
       stars.push(
-        <Image src="/icon/star.svg" width={24} height={22} alt="star" />
+        <Image src="/icon/star.svg" width={24} height={22} alt="star" key={i} />
       );
     }
     return stars;

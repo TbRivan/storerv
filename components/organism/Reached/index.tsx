@@ -1,5 +1,5 @@
 import Divider from "./Divider";
-import Info from "./info";
+import Info from "./Info";
 
 export default function Reached() {
   return (

@@ -1,6 +1,8 @@
+import { useRouter } from "next/router";
 import Footer from "./Footer";
 import MenuItem from "./MenuItem";
 import Profile from "./Profile";
+import Cookies from "js-cookie";
 
 interface SidebarProps {
   activeMenu: "overview" | "transactions" | "settings";
@@ -8,6 +10,12 @@ interface SidebarProps {
 
 export default function SideBar(props: SidebarProps) {
   const { activeMenu } = props;
+  const router = useRouter();
+
+  const onLogOut = () => {
+    Cookies.remove("token");
+    router.push("/");
+  };
   return (
     <section className="sidebar">
       <div className="content pt-50 pb-30 ps-30">
@@ -27,7 +35,7 @@ export default function SideBar(props: SidebarProps) {
             active={activeMenu === "settings"}
             href="/member/edit-profile"
           />
-          <MenuItem title="Log Out" href="/sign-in" />
+          <MenuItem title="Log Out" onClick={onLogOut} />
         </div>
         <Footer />
       </div>

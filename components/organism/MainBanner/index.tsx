@@ -1,4 +1,4 @@
-import Ilustration from "./ilustration";
+import Ilustration from "./Ilustration";
 
 export default function MainBanner() {
   return (
